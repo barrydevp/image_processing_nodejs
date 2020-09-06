@@ -1,8 +1,22 @@
 <svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">
- <g>
-  <!-- <line stroke-linecap="undefined" stroke-linejoin="round" id="svg_1" y2="194.45313" x2="356.5" y1="204.45313" x1="188.5" stroke-width="30" stroke="#000"/> -->
-<!--  {content}-->
-  <path d="{linePath}" stroke="{color}"
-        stroke-width="{strokeSize}" stroke-linejoin="round" fill="#fff"/>
- </g>
+    <!-- <defs> -->
+    <!--     <filter id="shadow1"> -->
+    <!--       <feDropShadow dx="0" dy="0" stdDeviation="2" --> 
+    <!--           flood-color="black"/> -->
+    <!--     </filter> -->
+    <!-- </defs> -->
+    <!-- <g> -->
+        <!-- <line stroke-linecap="undefined" stroke-linejoin="round" id="svg_1" y2="194.45313" x2="356.5" y1="204.45313" x1="188.5" stroke-width="30" stroke="#000"/> -->
+        <!--  {content}-->
+        <path d="{linePath}" stroke="{color}"
+            stroke-width="{strokeSize}" stroke-linejoin="round" fill="#fff"/>
+        <!-- <path d="{linePath}" stroke="{color}" -->
+        <!--       stroke-width="{strokeSize}" stroke-linejoin="round" fill="#fff" filter="url(#shadow1)"/> -->
+        <!-- <path d="{linePath}" stroke="{color}" -->
+        <!--       stroke-width="{strokeSize}" stroke-linejoin="round" fill="#fff" filter="url(#shadow)"/> -->
+        <!-- <path d="{linePath}" stroke="{color}" -->
+        <!--       stroke-width="{strokeSize}" stroke-linejoin="round" fill="#fff" filter="url(#shadow)"/> -->
+        <!-- <path d="{linePath}" stroke="{color}" -->
+        <!--       stroke-width="{strokeSize}" stroke-linejoin="round" fill="#fff" filter="url(#shadow)"/> -->
+    <!-- </g> -->
 </svg>

@@ -6,7 +6,7 @@ const svgb = require('svgb')
 
 const template = path.join(__dirname, '../assets/method-draw-image.svg')
 // const nameInput = '118614881_259104891753524_11646380289130353_n'
-const nameInput = 'hi4'
+const nameInput = 'goav'
 const inputImage = path.join(__dirname, `../assets/${nameInput}.png`)
 
 let strokeSize = 140
@@ -115,7 +115,7 @@ const makeSvg = async (contours, skip = 1, width = 2400, height = 3600) => {
         const endY = y + point.y
 
         return {x: endX, y: endY}
-    }).filter(Boolean), skip === 1 ? lineCommand : bezierCommand)
+    }).filter(Boolean), skip > 30 ? lineCommand : bezierCommand)
 
     // console.log(str)
     // for (let i = 1; i < contours.length; i++) {
@@ -131,7 +131,7 @@ const makeSvg = async (contours, skip = 1, width = 2400, height = 3600) => {
 
     const buffer = await svgb.toBuffer(template, {linePath: str, width: resultWidth, height: resultHeight, strokeSize, color})
 
-    await sharp(buffer).png().toFile('raw-svg.png')
+    await sharp(buffer).blur(20).png().toFile('raw-svg.png')
 
     return buffer
 }
@@ -378,9 +378,8 @@ setImmediate(async () => {
 
         color = '#fff'
         // color = 'red'
-        strokeSize = 160
 
-        const background = await gen(buffer, 1, 160)
+        const background = await gen(buffer, 1, 100)
 
         await sharp(background).png().toFile(`${nameInput}_gen.png`)
 
@@ -389,12 +388,12 @@ setImmediate(async () => {
         color = '#fff'
         strokeSize = 10
 
-        let result = await gen(background, 50, 10)
+        let result = await gen(background, 1, 10)
 
         color = '#A9A9A9'
         strokeSize = 20
 
-        result = await gen(result, 20, 6)
+        result = await gen(result, 1, 10)
 
         await sharp(result).png().toFile(`${nameInput}_result.png`)
 
