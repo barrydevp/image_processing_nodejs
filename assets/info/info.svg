@@ -1,0 +1,27 @@
+<svg width="800" height="680" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <title>background</title>
+        <rect fill="#ffffff" id="canvas_background" height="802" width="802" y="-1" x="-1"/>
+        <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+            <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+        </g>
+    </g>
+    <g>
+        <title>Layer 1</title>
+        <text transform="matrix(1,0,0,1,0,0) " xml:space="preserve" text-anchor="start"
+              font-family="Helvetica, Arial, sans-serif" font-size="92" id="svg_1" y="119.453125" x="16"
+              stroke-width="0" stroke="#000" fill="#000000">{main_content}</text>
+        <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="45"
+              id="svg_2" y="275.251259" x="599.499401" stroke-width="0" stroke="#000" fill="#000000">{item_size}</text>
+        <rect stroke="#000" id="svg_3" height="109.000528" width="189.000626" y="26.453063" x="593.499433"
+              stroke-width="1.5" fill="#000000"/>
+        <text stroke="#000000"
+              transform="matrix(2.3244731299034935,0,0,2.1749859422066145,-602.8349227679528,-50.76080293989283) "
+              xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="29"
+              id="svg_7" y="70.552384" x="524.52237" stroke-width="0" fill="#ffffff">{item_index}</text>
+        <text font-weight="normal" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif"
+              font-size="56" id="svg_5" y="190" x="21.5" stroke-width="0" stroke="#000"
+              fill="#000000">{item_type}</text>
+        <ellipse stroke="#000000" id="svg_8" cy="34.453125" cx="279" stroke-width="0" fill="#ffffff"/>
+    </g>
+</svg>

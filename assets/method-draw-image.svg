@@ -1,0 +1,8 @@
+<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <line stroke-linecap="undefined" stroke-linejoin="round" id="svg_1" y2="194.45313" x2="356.5" y1="204.45313" x1="188.5" stroke-width="30" stroke="#000"/>
+<!--  {content}-->
+  <path d="{linePath}" stroke="red"
+        stroke-width="{strokeSize}" stroke-linejoin="round"/>
+ </g>
+</svg>

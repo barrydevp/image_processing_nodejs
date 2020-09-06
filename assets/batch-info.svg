@@ -1,0 +1,41 @@
+<svg width="800" height="512" xmlns="http://www.w3.org/2000/svg">
+    <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+    <g>
+        <title>background</title>
+        <rect fill="#fff" id="canvas_background" height="514" width="802" y="-1" x="-1"/>
+        <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+            <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+        </g>
+    </g>
+    <g>
+        <title>Layer 1</title>
+        <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif"
+              font-size="76" id="svg_1" y="88.453125" x="20.5" stroke-width="0" stroke="#000" fill="#000000">Lô: {name}</text>
+        <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif"
+              font-size="29" id="svg_2" y="377.453125" x="25.5" stroke-width="0" stroke="#000"
+              fill="#000000">Ngày tạo:</text>
+        <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif"
+              font-size="29" id="svg_3" y="205.453125" x="26.5" stroke-width="0" stroke="#000"
+              fill="#000000">Số lượng:</text>
+        <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="29"
+              id="svg_4" y="319.453125" x="24.5" stroke-width="0" stroke="#000" fill="#000000">Loại:</text>
+        <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="29"
+              id="svg_5" y="436.453125" x="26.5" stroke-width="0" stroke="#000" fill="#000000">Ngày trả:</text>
+        <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="39"
+              id="svg_6" y="152.453125" x="27.5" stroke-width="0" stroke="#000" fill="#000000">Note:</text>
+        <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif"
+              font-size="39" id="svg_7" y="152.453125" x="140.384766" stroke-width="0" stroke="#000" fill="#000000">{note}</text>
+        <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif"
+              font-size="29" id="svg_8" y="205.453125" x="175.111465" stroke-width="0" stroke="#000"
+              fill="#000000">{total_orders}</text>
+        <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif"
+              font-size="29" id="svg_9" y="319.453125" x="105.364822" stroke-width="0" stroke="#000" fill="#000000">{product_types}</text>
+        <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif"
+              font-size="29" id="svg_10" y="377.453125" x="164.33107" stroke-width="0" stroke="#000" fill="#000000">{created_at}</text>
+        <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="29"
+              id="svg_11" y="264.453125" x="26.5" stroke-width="0" stroke="#000" fill="#000000">Người tạo:</text>
+        <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif"
+              font-size="29" id="svg_12" y="264.453125" x="179.58168" stroke-width="0" stroke="#000"
+              fill="#000000">{user_create}</text>
+    </g>
+</svg>
