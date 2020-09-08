@@ -6,7 +6,6 @@ module.exports = async () => {
     console.log('start')
     const buffer = await sharp(path.join(__dirname, '../assets/goav.png')).toBuffer()
 
-
     const result = await sharp(buffer).threshold().png().toFile('test.png')
     const result1 = await sharp(buffer).trim().png().toBuffer()
     const buffer1 = await sharp(result1).negate().toFile('negate.png')

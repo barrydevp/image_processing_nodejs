@@ -43,7 +43,7 @@ const controlPoint = (current, previous, next, reverse) => {
     const p = previous || current
     const n = next || current
     // The smoothing ratio
-    const smoothing = 0.2
+    const smoothing = 0.8
     // Properties of the opposed-line
     const o = line(p, n)
     // If is end-control-point, add PI to the angle to go backward
@@ -115,7 +115,7 @@ const makeSvg = async (contours, skip = 1, width = 2400, height = 3600) => {
         const endY = y + point.y
 
         return {x: endX, y: endY}
-    }).filter(Boolean), skip > 30 ? lineCommand : bezierCommand)
+    }).filter(Boolean), (skip > 30) ? lineCommand : bezierCommand)
 
     // console.log(str)
     // for (let i = 1; i < contours.length; i++) {
@@ -129,11 +129,19 @@ const makeSvg = async (contours, skip = 1, width = 2400, height = 3600) => {
     const [resultWidth, resultHeight] = [width, height].map((val) => val + strokeSize)
     console.log(resultWidth, resultHeight)
 
-    const buffer = await svgb.toBuffer(template, {linePath: str, width: resultWidth, height: resultHeight, strokeSize, color})
-
-    await sharp(buffer).blur(20).png().toFile('raw-svg.png')
+    const buffer = await svgb.toBuffer(template, {
+        linePath: str,
+        width: resultWidth,
+        height: resultHeight,
+        strokeSize,
+        color
+    })
 
     return buffer
+
+    // const shadow = await sharp(buffer).blur(5).toBuffer()
+
+    // return shadow
 }
 
 const getStrokeBufferAndContours = async (buffer, skip) => {
@@ -229,7 +237,11 @@ const getNextBuffer = async (strokeBuffers, buffer) => {
     // await sharp(negateBuffer).png().toFile('negate-two.png')
     // console.log('saved negate-one.png')
 
-    const compositeArr = strokeBuffers.length > 1 && strokeBuffers.slice(1).map(stroke => ({input: stroke, top: 0, left: 0})) || []
+    const compositeArr = strokeBuffers.length > 1 && strokeBuffers.slice(1).map(stroke => ({
+        input: stroke,
+        top: 0,
+        left: 0
+    })) || []
 
     compositeArr.push(
         {input: negateBuffer, top: strokeSize / 2, left: strokeSize / 2}
@@ -370,63 +382,63 @@ const gen = async (buffer, skip, _strokeSize) => {
 }
 
 setImmediate(async () => {
-    try {
-        console.log('alo')
-        const buffer = await sharp(inputImage).toBuffer()
-        // console.log([...buffer])
-        //
+        try {
+            console.log('alo')
+            const buffer = await sharp(inputImage).toBuffer()
+            // console.log([...buffer])
+            //
 
-        color = '#fff'
-        // color = 'red'
+            color = '#fff'
+            // color = 'red'
 
-        const background = await gen(buffer, 1, 100)
+            const background = await gen(buffer, 1, 100)
 
-        await sharp(background).png().toFile(`${nameInput}_gen.png`)
+            await sharp(background).png().toFile(`${nameInput}_gen.png`)
 
-        // color = 'red'
-        // color = '#A9A9A9'
-        color = '#fff'
-        strokeSize = 10
+            // color = 'red'
+            // color = '#A9A9A9'
+            color = '#fff'
+            strokeSize = 10
 
-        let result = await gen(background, 1, 10)
+            let result = await gen(background, 1, 10)
 
-        color = '#A9A9A9'
-        strokeSize = 20
+            color = '#A9A9A9'
+            strokeSize = 20
 
-        result = await gen(result, 1, 10)
+            result = await gen(result, 1, 10)
 
-        await sharp(result).png().toFile(`${nameInput}_result.png`)
+            await sharp(result).png().toFile(`${nameInput}_result.png`)
 
-        // const nextBuffer = await sharp({
-        //     create: {
-        //         width: resultWidth,
-        //         height: resultHeight,
-        //         channels: 4,
-        //         background: {
-        //             r: 255, g: 255, b: 255
-        //         }
-        //     }
-        // }).composite([
-        //     {input: inputImage, top: strokeSize / 2, left: strokeSize / 2},
-        //     {input: strokeBuffer, top: 0, left: 0}
-        // ]).threshold().raw().toBuffer()
+            // const nextBuffer = await sharp({
+            //     create: {
+            //         width: resultWidth,
+            //         height: resultHeight,
+            //         channels: 4,
+            //         background: {
+            //             r: 255, g: 255, b: 255
+            //         }
+            //     }
+            // }).composite([
+            //     {input: inputImage, top: strokeSize / 2, left: strokeSize / 2},
+            //     {input: strokeBuffer, top: 0, left: 0}
+            // ]).threshold().raw().toBuffer()
 
-        // await sharp(strokeBuffer).composite([
-        //     {input: inputImage, top: strokeSize / 2, left: strokeSize / 2},
-        // ]).png().toFile('combine-3.png')
+            // await sharp(strokeBuffer).composite([
+            //     {input: inputImage, top: strokeSize / 2, left: strokeSize / 2},
+            // ]).png().toFile('combine-3.png')
 
 
-        // contours.forEach((pos) => {
-        //     const {x, y} = pos
+            // contours.forEach((pos) => {
+            //     const {x, y} = pos
 
-        //     data[(y * width + x) * 4 - 1] = 255
-        // })
+            //     data[(y * width + x) * 4 - 1] = 255
+            // })
 
-        // await sharp(Buffer.from(data), {raw: {width, height, channels: 4}}).png().toFile('raw_1.png')
+            // await sharp(Buffer.from(data), {raw: {width, height, channels: 4}}).png().toFile('raw_1.png')
 
-    } catch (e) {
-        console.log(e)
+        } catch (e) {
+            console.log(e)
 
+        }
     }
-}
 )

@@ -5,7 +5,7 @@
     "author": "barrydevp <barrydevp@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "gen": "node src/raw.js"
+        "gen": "node src/raw_1.js"
     },
     "dependencies": {
         "bluebird": "^3.7.2",
